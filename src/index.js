@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+import { ChakraProvider } from "@chakra-ui/react";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <ChakraProvider resetCSS={false}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </ChakraProvider>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
