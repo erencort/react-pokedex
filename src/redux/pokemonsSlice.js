@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const limit = 100;
+const limit = 111;
 let offset = 0;
 
 export const fetchPokemons = createAsyncThunk(

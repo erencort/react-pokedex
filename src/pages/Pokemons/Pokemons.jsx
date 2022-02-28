@@ -4,6 +4,7 @@ import { fetchPokemons } from "../../redux/pokemonsSlice";
 import { Box, Button, Image, SimpleGrid } from "@chakra-ui/react";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
+import PokemonCard from "../../components/PokemonCard/PokemonCard";
 
 function Pokemons() {
   const dispatch = useDispatch();
@@ -15,12 +16,10 @@ function Pokemons() {
   );
 
   useEffect(() => {
-    dispatch(fetchPokemons());
-  }, [dispatch]);
-
-  const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
+    if (status === "idle") {
+      dispatch(fetchPokemons());
+    }
+  }, [dispatch, status]);
 
   if (status === "failed") {
     return <Error error={message} />;
@@ -28,34 +27,10 @@ function Pokemons() {
 
   return (
     <div>
-      <SimpleGrid columns={6} spacing={10}>
+      <SimpleGrid minChildWidth="250px" spacing={10}>
         {pokemons.map((item, index) => (
           <div key={index + 1}>
-            <Box
-              maxW="sm"
-              borderWidth="1px"
-              borderRadius="lg"
-              overflow="hidden"
-              bg="red.500"
-              mt={10}
-            >
-              <Image
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-                  index + 1
-                }.png`}
-                alt="pokemon-img"
-                align="flex-center"
-              />
-              <Box
-                mt="1"
-                fontWeight="semibold"
-                as="h4"
-                lineHeight="tight"
-                isTruncated
-              >
-                {capitalizeFirstLetter(item.name)}
-              </Box>
-            </Box>
+            <PokemonCard item={item} index={index} />
           </div>
         ))}
       </SimpleGrid>
