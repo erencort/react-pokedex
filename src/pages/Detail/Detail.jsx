@@ -18,7 +18,6 @@ function Detail() {
       .then((res) => setPokeInfo(res.data))
       .finally(() => setIsLoading(false));
   }, [id]);
-  console.log(pokeInfo);
 
   if (isLoading) {
     return <Loading />;
@@ -27,6 +26,7 @@ function Detail() {
   return (
     <div>
       <h1>{capitalizeFirstLetter(pokeInfo.name)}</h1>
+      <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`} alt="poke-img" />
       <h3>Abilities</h3>
       <ul>
         {pokeInfo.abilities.map((item, index) => (
@@ -45,5 +45,8 @@ function Detail() {
     </div>
   );
 }
+
+// pokemon image
+//https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${props.id}.png
 
 export default Detail;

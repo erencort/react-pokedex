@@ -18,11 +18,30 @@ export const pokemonsSlice = createSlice({
   name: "pokemons",
   initialState: {
     items: [],
+    favPokemons: [],
     status: "idle",
     error: null,
     isAllDataFetched: false,
   },
-  reducers: {},
+  reducers: {
+    setFavPokemons: (state, action) => {
+      // check is object in array
+      const isFound = state.favPokemons.some((item) => {
+        if (item.id === action.payload.id) {
+          return true;
+        }
+      });
+
+      if (!isFound) {
+        state.favPokemons = [...state.favPokemons, action.payload];
+      } else {
+        const filtered = state.favPokemons.filter(
+          (item) => item.id !== action.payload.id
+        );
+        state.favPokemons = filtered;
+      }
+    },
+  },
   extraReducers: {
     [fetchPokemons.pending]: (state, action) => {
       state.status = "loading";
@@ -43,3 +62,4 @@ export const pokemonsSlice = createSlice({
 });
 
 export default pokemonsSlice.reducer;
+export const { setFavPokemons } = pokemonsSlice.actions;
