@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPokemons } from "../../redux/pokemonsSlice";
-import { Box, Button, Image, SimpleGrid } from "@chakra-ui/react";
+import { Button, SimpleGrid } from "@chakra-ui/react";
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";

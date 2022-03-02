@@ -13,6 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Pokemons />} />
+        <Route path="pokemon/:id" element={<Detail />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="favorites/pokemon/:id" element={<Detail />} />
       </Routes>

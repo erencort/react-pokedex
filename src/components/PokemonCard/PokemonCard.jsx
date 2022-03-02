@@ -18,6 +18,19 @@ function PokemonCard({ index, item }) {
   const [isInFavs, setIsInFavs] = useState(false);
   const dispatch = useDispatch();
 
+  useState(() => {
+    const isFound = favPokemons.some((item) => {
+      if (item.id === id) {
+        return true;
+      }
+    });
+    if (!isFound) {
+      setIsInFavs(false);
+    } else {
+      setIsInFavs(true);
+    }
+  }, [favPokemons]);
+
   const setFavsHandler = () => {
     setIsInFavs(!isInFavs);
     dispatch(setFavPokemons({ name: item.name, id: id }));
