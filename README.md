@@ -6,7 +6,7 @@
 * React Router
 * Chakra UI
 * Axios
-* 
+
 
 ## Live Site
 
