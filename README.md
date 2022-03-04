@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Languages/Framework/Database/Packages  used
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* React
+* Redux
+* Poke API (https://pokeapi.co/docs/v2)
+* React Router
+* Chakra UI
+* Axios
+* 
+
+## Live Site
+
+https://amazing-almeida-c999a3.netlify.app
 
 ## Available Scripts
 
