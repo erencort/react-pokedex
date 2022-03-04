@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
+//react-router
+import { Link } from "react-router-dom";
+//redux
+import { setFavPokemons } from "../../redux/pokemonsSlice";
+import { useDispatch, useSelector } from "react-redux";
+//style
+import "./style.css";
 import { Box, Button, Image, Icon } from "@chakra-ui/react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { Link } from "react-router-dom";
-import { setFavPokemons } from "../../redux/pokemonsSlice";
-import { useDispatch } from "react-redux";
-import "./style.css";
-import { useSelector } from "react-redux";
 
 function PokemonCard({ index, item }) {
   const id = index + 1;

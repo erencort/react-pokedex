@@ -1,5 +1,6 @@
-import React from "react";
+//style
 import { Box, Button, Image } from "@chakra-ui/react";
+//react-router
 import { Link } from "react-router-dom";
 
 function FavPokemonCard({ item }) {

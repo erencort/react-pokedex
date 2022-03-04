@@ -1,7 +1,9 @@
-import React from "react";
+//redux
 import { useSelector } from "react-redux";
-import { SimpleGrid } from "@chakra-ui/react";
+//components
 import FavPokemonCard from "../../components/FavPokemonCard/FavPokemonCard";
+//style
+import { SimpleGrid } from "@chakra-ui/react";
 import "./style.css";
 
 function Favorites() {

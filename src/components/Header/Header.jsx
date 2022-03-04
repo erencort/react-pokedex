@@ -1,5 +1,4 @@
-import React from "react";
-import { Text, Image } from "@chakra-ui/react";
+//style
 import "./style.css";
 
 function Header() {

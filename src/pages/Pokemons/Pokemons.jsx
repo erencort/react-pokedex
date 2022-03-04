@@ -1,10 +1,13 @@
 import { useEffect } from "react";
+//redux
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPokemons } from "../../redux/pokemonsSlice";
-import { Button, SimpleGrid } from "@chakra-ui/react";
+//components
 import Loading from "../../components/Loading/Loading";
 import Error from "../../components/Error/Error";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
+//style
+import { Button, SimpleGrid } from "@chakra-ui/react";
 
 function Pokemons() {
   const dispatch = useDispatch();

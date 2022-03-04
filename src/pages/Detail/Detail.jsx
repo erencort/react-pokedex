@@ -1,7 +1,11 @@
+import { useEffect, useState } from "react";
+//axios
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+//react-router
 import { useParams } from "react-router-dom";
+//components
 import Loading from "../../components/Loading/Loading";
+//style
 import "./style.css";
 
 function Detail() {
@@ -26,7 +30,10 @@ function Detail() {
   return (
     <div>
       <h1>{capitalizeFirstLetter(pokeInfo.name)}</h1>
-      <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`} alt="poke-img" />
+      <img
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
+        alt="poke-img"
+      />
       <h3>Abilities</h3>
       <ul>
         {pokeInfo.abilities.map((item, index) => (
