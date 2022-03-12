@@ -22,6 +22,13 @@ function Navbar() {
             </Button>
           </li>
         </Link>
+        <Link to="memorygame">
+          <li>
+            <Button ml={7} p={4} border="none" colorScheme="blue" size="xs">
+              Memory Game
+            </Button>
+          </li>
+        </Link>
       </ul>
     </div>
   );

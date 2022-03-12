@@ -9,13 +9,15 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <ChakraProvider resetCSS={false}>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </ChakraProvider>
-  </BrowserRouter>,
+  <React.StrictMode>
+    <BrowserRouter>
+      <ChakraProvider resetCSS={false}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </ChakraProvider>
+    </BrowserRouter>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

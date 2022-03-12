@@ -9,11 +9,17 @@ import "./style.css";
 function Favorites() {
   const items = useSelector((state) => state.pokemons.favPokemons);
   return (
-    <SimpleGrid minChildWidth="250px" spacing={10}>
-      {items.map((item) => (
-        <FavPokemonCard item={item} />
-      ))}
-    </SimpleGrid>
+    <div>
+      {items.length > 0 ? (
+        <SimpleGrid minChildWidth="250px" spacing={10}>
+          {items.map((item) => (
+            <FavPokemonCard item={item} />
+          ))}
+        </SimpleGrid>
+      ) : (
+        "There is nothing to be shown here."
+      )}
+    </div>
   );
 }
 

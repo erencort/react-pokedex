@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 //style
 import "./App.css";
+import MemoryGame from "./pages/MemoryGame/MemoryGame";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="pokemon/:id" element={<Detail />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="favorites/pokemon/:id" element={<Detail />} />
+        <Route path="memorygame" element={<MemoryGame />} />
       </Routes>
     </div>
   );
